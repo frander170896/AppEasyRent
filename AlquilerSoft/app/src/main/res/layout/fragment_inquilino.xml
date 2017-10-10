@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ScrollView01"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:background="#ffffff"
+        >
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/txtnombreInquilino"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignLeft="@+id/button"
+            android:layout_alignStart="@+id/button"
+            android:layout_alignRight="@+id/txtSegundoApellido"
+            android:layout_alignEnd="@+id/txtSegundoApellido">
+
+            <EditText
+                android:id="@+id/edtnombreInquilino"
+                android:layout_width="285dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/txtCapacidad"
+                android:layout_marginTop="42dp"
+                android:ems="10"
+                android:hint="Nombre"
+                android:inputType="textAutoCorrect" />
+
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/txtPrimerApellido"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="45dp"
+            android:layout_below="@+id/txtnombreInquilino"
+            android:layout_alignLeft="@+id/txtSegundoApellido"
+            android:layout_alignStart="@+id/txtSegundoApellido"
+            android:layout_alignRight="@+id/txtSegundoApellido"
+            android:layout_alignEnd="@+id/txtSegundoApellido">
+
+            <EditText
+                android:id="@+id/edtPrimerApellido"
+                android:layout_width="285dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Primer Apellido"
+                android:inputType="textAutoCorrect"
+                android:layout_below="@+id/edtPrecio"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="101dp" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/txtSegundoApellido"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="37dp"
+            android:layout_below="@+id/txtPrimerApellido"
+            android:layout_alignLeft="@+id/button"
+            android:layout_alignStart="@+id/button"
+            android:layout_alignRight="@+id/button"
+            android:layout_alignEnd="@+id/button">
+
+            <EditText
+                android:id="@+id/edtSegundoApellido"
+                android:layout_width="285dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/edtNumeroApartamento"
+                android:layout_marginTop="134dp"
+                android:ems="10"
+                android:hint="Segundo Apellido"
+                android:inputType="textAutoCorrect" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/txtNumeroTelefono"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:layout_below="@+id/txtSegundoApellido"
+            android:layout_alignRight="@+id/button"
+            android:layout_alignEnd="@+id/button"
+            android:layout_alignLeft="@+id/txtSegundoApellido"
+            android:layout_alignStart="@+id/txtSegundoApellido">
+
+            <EditText
+                android:id="@+id/edtNumeroTelefono"
+                android:layout_width="285dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Número Teléfono"
+                android:inputType="number|phone"
+                android:layout_marginTop="134dp"
+                android:layout_below="@+id/edtNumeroApartamento"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+        </android.support.design.widget.TextInputLayout>
+
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/colorAccent"
+            android:text="Crear"
+            android:textColor="@color/white"
+            android:layout_marginTop="33dp"
+            android:layout_below="@+id/txtNumeroTelefono"
+            android:layout_centerHorizontal="true"></Button>
+    </RelativeLayout>
+</ScrollView>

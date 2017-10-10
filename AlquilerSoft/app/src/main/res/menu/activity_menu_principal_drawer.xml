@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_cobro"
+            android:icon="@mipmap/ic_cobrar"
+            android:title="@string/Cobrar" />
+        <item
+            android:id="@+id/nav_inquilino"
+            android:icon="@mipmap/ic_launcher"
+            android:title="@string/Inquilino" />
+        <item
+            android:id="@+id/nav_mostrarInquilinos"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="@string/M_Inquilinos" />
+        <item
+            android:id="@+id/nav_Departamentos"
+            android:icon="@mipmap/ic_departamentos"
+            android:title="@string/Depertamentos" />
+        <item
+            android:id="@+id/nav_mostrarDepas"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="@string/M_Departamentos" />
+        <item
+            android:id="@+id/nav_manage"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="@string/action_settings" />
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Share" />
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Send" />
+        </menu>
+    </item>
+
+</menu>

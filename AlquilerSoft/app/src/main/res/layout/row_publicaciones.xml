@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/txtCapacidadA"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:layout_alignBaseline="@+id/lb_CpacidadA"
+        android:layout_alignBottom="@+id/lb_CpacidadA"
+        android:layout_toEndOf="@+id/lb_CpacidadA"
+        android:layout_toRightOf="@+id/lb_CpacidadA"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/txtPrecioAl"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@+id/lb_PrecioA"
+        android:layout_toRightOf="@+id/lb_PrecioA"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/lb_CpacidadA"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:layout_alignLeft="@+id/imagenPublicacion"
+        android:layout_alignStart="@+id/imagenPublicacion"
+        android:layout_below="@+id/txtPrecioAl"
+        android:layout_marginLeft="11dp"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="17dp"
+        android:text="Capacidad:" />
+
+    <TextView
+        android:id="@+id/lb_Contacto"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:layout_alignLeft="@+id/lb_CpacidadA"
+        android:layout_alignStart="@+id/lb_CpacidadA"
+        android:layout_below="@+id/txtCapacidadA"
+        android:layout_marginTop="15dp"
+        android:text="Contacto:" />
+
+    <TextView
+        android:id="@+id/lb_UbicacionA"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:text="Ubicación:"
+        android:layout_marginBottom="18dp"
+        android:layout_above="@+id/btnAlquilar"
+        android:layout_alignLeft="@+id/lb_CpacidadA"
+        android:layout_alignStart="@+id/lb_CpacidadA" />
+
+    <ImageView
+        android:id="@+id/imagenPublicacion"
+        android:layout_width="350dp"
+        android:layout_height="200dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="18dp"
+        android:theme="@style/AppTheme"
+        app:srcCompat="@mipmap/ic_logo" />
+
+    <TextView
+        android:id="@+id/lb_PrecioA"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:text="Precio:"
+        android:layout_alignLeft="@+id/lb_CpacidadA"
+        android:layout_alignStart="@+id/lb_CpacidadA"
+        android:layout_alignTop="@+id/txtPrecioAl" />
+
+    <TextView
+        android:id="@+id/txtUbicacionA"
+        android:layout_width="250dp"
+        android:layout_height="30dp"
+        android:layout_alignBaseline="@+id/lb_UbicacionA"
+        android:layout_alignBottom="@+id/lb_UbicacionA"
+        android:layout_toEndOf="@+id/lb_UbicacionA"
+        android:layout_toRightOf="@+id/lb_UbicacionA"
+        android:text="TextView" />
+
+    <Button
+        android:id="@+id/btnAlquilar"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="26dp"
+        android:background="@color/colorAccent"
+        android:text="Alquilar"
+        android:textColor="@color/white" />
+
+    <TextView
+        android:id="@+id/txtContacto"
+        android:layout_width="200dp"
+        android:layout_height="30dp"
+        android:layout_alignBottom="@+id/lb_Contacto"
+        android:layout_toEndOf="@+id/lb_Contacto"
+        android:layout_toRightOf="@+id/lb_Contacto"
+        android:text="TextView" />
+</RelativeLayout>

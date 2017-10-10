@@ -1,0 +1,24 @@
+<resources>
+    <string name="title_activity_menu_principal">Menu Principal</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="appname">EasyRent</string>
+    <string name="action_settings">Configuración</string>
+    <string name="Inquilino">Crear Inquilino</string>
+    <string name="M_Inquilinos">Mostrar Inquilinos</string>
+    <string name="Depertamentos">Crear Departamentos</string>
+    <string name="M_Departamentos">Mostrar Departamentos</string>
+    <string name="Cobrar">Cobrar</string>
+    <string name="Alquiler">Alquiler</string>
+    <string name="Ubicacion">Seleccione la ubicación</string>
+    <string name="Precio">Precio</string>
+    <string name="numero_apartamento">Número Apartamento</string>
+    <string name="Capacidad">Capacidad</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_menu_usuario">EasyRent</string>
+
+
+</resources>

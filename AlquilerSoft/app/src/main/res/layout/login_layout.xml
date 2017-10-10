@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ScrollView2"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/txtIdentificacion"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="76dp"
+        android:weightSum="1"
+        app:counterEnabled="true"
+        app:counterMaxLength="30"
+        app:counterOverflowTextAppearance="@style/CounterOverFlow"
+        app:counterTextAppearance="@style/Counter"
+        app:errorTextAppearance="@style/Error"
+        android:layout_below="@+id/txtInicioSesion"
+        android:layout_alignLeft="@+id/txtContraseña"
+        android:layout_alignStart="@+id/txtContraseña">
+
+        <EditText
+            android:id="@+id/edtCedula"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@+id/imageView2"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="27dp"
+            android:ems="10"
+            android:hint="Cédula"
+            android:inputType="text" />
+
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/txtContraseña"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        app:counterEnabled="true"
+        app:counterMaxLength="30"
+        app:counterOverflowTextAppearance="@style/CounterOverFlow"
+        app:counterTextAppearance="@style/Counter"
+        app:errorTextAppearance="@style/Error"
+        android:layout_marginTop="17dp"
+        android:layout_below="@+id/txtIdentificacion"
+        android:layout_alignLeft="@+id/boton_aceptar"
+        android:layout_alignStart="@+id/boton_aceptar">
+
+        <EditText
+            android:id="@+id/edtContraseña"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/txtIdentificacion"
+            android:layout_marginTop="57dp"
+            android:ems="10"
+            android:hint="Contraseña"
+            android:inputType="textPassword" />
+    </android.support.design.widget.TextInputLayout>
+
+    <Button
+        android:id="@+id/boton_aceptar"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="34dp"
+        android:layout_weight="1"
+        android:backgroundTint="@color/colorAccent"
+        android:text="Ingresar"
+        android:textColor="@color/white"
+        android:layout_below="@+id/txtContraseña"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/boton_Registrarse"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:backgroundTint="@color/colorAccent"
+        android:text="Registrarse"
+        android:textColor="@color/white"
+        android:layout_below="@+id/boton_aceptar"
+        android:layout_alignLeft="@+id/boton_aceptar"
+        android:layout_alignStart="@+id/boton_aceptar"
+        android:layout_marginTop="12dp" />
+
+    <TextView
+        android:id="@+id/txtInicioSesion"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textAlignment="center"
+        android:textSize="40dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:text="Inicio de Sesión" />
+
+
+</RelativeLayout>
+</ScrollView>
