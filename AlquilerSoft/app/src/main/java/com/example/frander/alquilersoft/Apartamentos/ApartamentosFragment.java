@@ -37,13 +37,13 @@ public class ApartamentosFragment extends Fragment {
        /* ArrayAdapter adapter = new ArrayAdapter<String>(activity,android.R.layout.simple_spinner_dropdown_item,Lugares);
         Spinner lugares = (Spinner) view.findViewById(R.id.spnLugares);
         lugares.setAdapter(adapter);*/
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(activity,android.R.layout.simple_dropdown_item_1line, Lugares);
+       /* ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(activity,android.R.layout.simple_dropdown_item_1line, Lugares);
         MaterialBetterSpinner materialDesignSpinner = (MaterialBetterSpinner) view.findViewById(R.id.amSpnLugares);
         materialDesignSpinner.setAdapter(arrayAdapter);
 
         ArrayAdapter<String> arrayAdapter2 = new ArrayAdapter<String>(activity,android.R.layout.simple_dropdown_item_1line, Estado);
         MaterialBetterSpinner materialDesignSpinner2 = (MaterialBetterSpinner) view.findViewById(R.id.amSpnEstado);
-        materialDesignSpinner2.setAdapter(arrayAdapter2);
+        materialDesignSpinner2.setAdapter(arrayAdapter2);*/
         return view;
     }
 
