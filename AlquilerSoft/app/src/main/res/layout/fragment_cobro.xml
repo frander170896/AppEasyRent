@@ -8,38 +8,51 @@
         android:layout_width="match_parent" android:layout_height="wrap_content"
         android:background="#ffffff"
         >
-        <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
-            android:id="@+id/amInquilino"
-            android:layout_width="285dp"
-            android:layout_height="wrap_content"
-            android:hint="@string/Inquilino"
-            android:textColorHint="#05ab9a"
-            android:layout_marginLeft="41dp"
-            android:layout_marginTop="20dp"
-            >
-        </com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner>
 
         <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
-            android:id="@+id/amDepartamento"
+            android:id="@+id/amApartamento"
             android:layout_width="285dp"
             android:layout_height="wrap_content"
-            android:hint="Depertamento"
+            android:hint="Apartamento"
             android:textColorHint="#05ab9a"
-            android:layout_marginTop="51dp"
-            android:layout_below="@+id/amInquilino"
-            android:layout_alignLeft="@+id/amInquilino"
-            android:layout_alignStart="@+id/amInquilino">
+            android:layout_marginTop="21dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true">
         </com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner>
         <android.support.design.widget.TextInputLayout
-            android:id="@+id/txtPrecio"
+            android:id="@+id/divInquilino"
             android:layout_width="350dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="41dp"
-            android:layout_below="@+id/amDepartamento"
-            android:layout_alignLeft="@+id/amDepartamento"
-            android:layout_alignStart="@+id/amDepartamento"
-            android:layout_alignRight="@+id/amDepartamento"
-            android:layout_alignEnd="@+id/amDepartamento">
+            android:layout_height="100dp"
+            android:layout_below="@+id/amApartamento"
+            android:layout_marginTop="36dp"
+            android:layout_alignRight="@+id/amApartamento"
+            android:layout_alignEnd="@+id/amApartamento"
+            android:layout_alignLeft="@+id/amApartamento"
+            android:layout_alignStart="@+id/amApartamento">
+
+            <EditText
+                android:id="@+id/edtInquilino"
+                android:layout_width="290dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Inquilino"
+                android:enabled="false"
+                android:inputType="text"
+                android:layout_below="@+id/edtPrecio"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="101dp" />
+
+        </android.support.design.widget.TextInputLayout>
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/divPrecio"
+            android:layout_width="350dp"
+            android:layout_height="100dp"
+            android:layout_below="@+id/divInquilino"
+            android:layout_alignLeft="@+id/divInquilino"
+            android:layout_alignStart="@+id/divInquilino"
+            android:layout_alignRight="@+id/button"
+            android:layout_alignEnd="@+id/button">
 
             <EditText
                 android:id="@+id/edtPrecio"
@@ -55,20 +68,150 @@
                 android:layout_marginTop="101dp" />
 
         </android.support.design.widget.TextInputLayout>
+        <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+            android:id="@+id/amDescuento"
+            android:layout_width="285dp"
+            android:layout_height="wrap_content"
+            android:hint="Descuentos"
+            android:textColorHint="#05ab9a"
+            android:layout_below="@+id/divPrecio"
+            android:layout_alignLeft="@+id/divPrecio"
+            android:layout_alignStart="@+id/divPrecio">
+        </com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner>
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/divCobroAdicional"
+            android:layout_width="350dp"
+            android:layout_height="100dp"
+            android:layout_below="@+id/txtSubtotal"
+            android:layout_marginTop="18dp"
+            android:layout_alignRight="@+id/edtSubtotal"
+            android:layout_alignEnd="@+id/edtSubtotal"
+            android:layout_alignLeft="@+id/txtSubtotal"
+            android:layout_alignStart="@+id/txtSubtotal">
 
+            <EditText
+                android:id="@+id/edtCobroAdicional"
+                android:layout_width="290dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/edtPrecio"
+                android:layout_marginTop="101dp"
+                android:ems="10"
+                android:enabled="false"
+                android:hint="Cobro Adicional"
+                android:inputType="number" />
+
+        </android.support.design.widget.TextInputLayout>
+        <TextView
+            android:id="@+id/txtSubtotal"
+            android:layout_width="100dp"
+            android:layout_height="45dp"
+            android:textSize="20dp"
+            android:text="SubTotal:"
+            android:layout_below="@+id/amDescuento"
+            android:layout_alignLeft="@+id/amDescuento"
+            android:layout_alignStart="@+id/amDescuento"
+            android:layout_marginTop="16dp" />
+        <EditText
+            android:id="@+id/edtSubtotal"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:enabled="false"
+            android:hint=""
+            android:inputType="number"
+            android:layout_alignBottom="@+id/txtSubtotal"
+            android:layout_toRightOf="@+id/txtSubtotal"
+            android:layout_alignRight="@+id/amDescuento"
+            android:layout_alignEnd="@+id/amDescuento" />
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/divDescripcionPago"
+            android:layout_width="350dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="18dp"
+            android:layout_below="@+id/divCobroAdicional"
+            android:layout_alignRight="@+id/divCobroAdicional"
+            android:layout_alignEnd="@+id/divCobroAdicional"
+            android:layout_alignLeft="@+id/divCobroAdicional"
+            android:layout_alignStart="@+id/divCobroAdicional">
+
+            <EditText
+                android:id="@+id/edtDescripcionPago"
+                android:layout_width="290dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/edtPrecio"
+                android:layout_marginTop="101dp"
+                android:ems="10"
+                android:enabled="false"
+                android:hint="Descripción Cobro Adicional"
+                android:inputType="number" />
+
+        </android.support.design.widget.TextInputLayout>
+        <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+            android:id="@+id/amMetodoPago"
+            android:layout_width="285dp"
+            android:layout_height="wrap_content"
+            android:hint="Método de Pago"
+            android:textColorHint="#05ab9a"
+            android:layout_marginTop="14dp"
+            android:layout_below="@+id/divDescripcionPago"
+            android:layout_alignLeft="@+id/divDescripcionPago"
+            android:layout_alignStart="@+id/divDescripcionPago">
+        </com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner>
+        <TextView
+            android:id="@+id/txtTotal"
+            android:layout_width="100dp"
+            android:layout_height="45dp"
+            android:textSize="20dp"
+            android:text="Total:"
+            android:layout_marginTop="26dp"
+            android:layout_below="@+id/amMetodoPago"
+            android:layout_alignLeft="@+id/amMetodoPago"
+            android:layout_alignStart="@+id/amMetodoPago" />
+        <EditText
+            android:id="@+id/edtTotal"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:enabled="false"
+            android:hint=""
+            android:inputType="number"
+            android:layout_alignBottom="@+id/txtTotal"
+            android:layout_toRightOf="@+id/txtTotal"
+            android:layout_alignRight="@+id/amMetodoPago"
+            android:layout_alignEnd="@+id/amMetodoPago" />
         <Button
-            android:id="@+id/button"
-            android:layout_width="300dp"
+            android:id="@+id/btnFactura"
+            android:layout_width="100dp"
             android:layout_height="50dp"
-            android:layout_marginTop="74dp"
             android:layout_weight="1"
             android:backgroundTint="@color/colorAccent"
-            android:text="@string/Cobrar"
+            android:text="Factura"
             android:textColor="@color/white"
-            android:layout_below="@+id/txtPrecio"
-            android:layout_alignRight="@+id/txtPrecio"
-            android:layout_alignEnd="@+id/txtPrecio"
-            android:layout_alignLeft="@+id/txtPrecio"
-            android:layout_alignStart="@+id/txtPrecio"></Button>
+            android:layout_alignBaseline="@+id/btnCancelar"
+            android:layout_alignBottom="@+id/btnCancelar"
+            android:layout_toRightOf="@+id/btnCancelar"
+            android:layout_toEndOf="@+id/btnCancelar"
+            android:layout_marginLeft="19dp"
+            android:layout_marginStart="19dp"></Button>
+        <Button
+            android:id="@+id/btnCancelar"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="64dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/colorAccent"
+            android:text="Cancelar"
+            android:textColor="@color/white"
+            android:layout_below="@+id/txtTotal"
+            android:layout_alignLeft="@+id/txtTotal"
+            android:layout_alignStart="@+id/txtTotal"
+            android:layout_marginLeft="26dp"
+            android:layout_marginStart="26dp"></Button>
+
+
     </RelativeLayout>
 </ScrollView>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/ScrollView01"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
@@ -7,8 +8,38 @@
             xmlns:app="http://schemas.android.com/apk/res-auto"
             xmlns:tools="http://schemas.android.com/tools"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             tools:context="com.example.frander.alquilersoft.Sign_in">
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/divTelefono"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:weightSum="1"
+                app:counterEnabled="true"
+                app:counterMaxLength="30"
+                app:counterOverflowTextAppearance="@style/CounterOverFlow"
+                app:counterTextAppearance="@style/Counter"
+                app:errorTextAppearance="@style/Error"
+                android:layout_below="@+id/txtCedula"
+                android:layout_alignRight="@+id/txtCedula"
+                android:layout_alignEnd="@+id/txtCedula"
+                android:layout_alignLeft="@+id/txtCedula"
+                android:layout_alignStart="@+id/txtCedula">
+
+                <EditText
+                    android:id="@+id/edtTelefono"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_below="@+id/imageView2"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="27dp"
+                    android:ems="10"
+                    android:hint="Teléfono"
+                    android:inputType="text" />
+
+
+            </android.support.design.widget.TextInputLayout>
 
             <TextView
                 android:id="@+id/txtSign_in"
@@ -71,8 +102,9 @@
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="27dp"
                     android:ems="10"
-                    android:hint="Apellido"
+                    android:hint="Apellidos"
                     android:inputType="text" />
+
             </android.support.design.widget.TextInputLayout>
             <android.support.design.widget.TextInputLayout
                 android:id="@+id/txtCedula"
@@ -96,11 +128,40 @@
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="27dp"
                     android:ems="10"
-                    android:hint="Cedula"
+                    android:hint="Cédula o Pasaporte"
                     android:inputType="text" />
             </android.support.design.widget.TextInputLayout>
+
             <android.support.design.widget.TextInputLayout
-                android:id="@+id/txtContraseña"
+                android:id="@+id/divTelefono2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:weightSum="1"
+                app:counterEnabled="true"
+                app:counterMaxLength="30"
+                app:counterOverflowTextAppearance="@style/CounterOverFlow"
+                app:counterTextAppearance="@style/Counter"
+                app:errorTextAppearance="@style/Error"
+                android:layout_below="@+id/divTelefono"
+                android:layout_alignRight="@+id/divTelefono"
+                android:layout_alignEnd="@+id/divTelefono"
+                android:layout_alignLeft="@+id/divTelefono"
+                android:layout_alignStart="@+id/divTelefono">
+
+                <EditText
+                    android:id="@+id/edtTelefono2"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_below="@+id/imageView2"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="27dp"
+                    android:ems="10"
+                    android:hint="Celular"
+                    android:inputType="text"/>
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/divNumeroCuenta"
                 android:layout_width="350dp"
                 android:layout_height="wrap_content"
                 android:weightSum="1"
@@ -109,10 +170,94 @@
                 app:counterOverflowTextAppearance="@style/CounterOverFlow"
                 app:counterTextAppearance="@style/Counter"
                 app:errorTextAppearance="@style/Error"
-                android:layout_below="@+id/txtApellido"
-                android:layout_alignLeft="@+id/txtCedula"
-                android:layout_alignStart="@+id/txtCedula"
-                android:layout_marginTop="75dp">
+                android:layout_below="@+id/divCorreo"
+                android:layout_alignLeft="@+id/divCorreo"
+                android:layout_alignStart="@+id/divCorreo">
+
+                <EditText
+                    android:id="@+id/edtNumeroCuenta"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_below="@+id/imageView2"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="27dp"
+                    android:ems="10"
+                    android:hint="Numero de cuenta"
+                    android:inputType="text" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/divDireccion"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:weightSum="1"
+                app:counterEnabled="true"
+                app:counterMaxLength="30"
+                app:counterOverflowTextAppearance="@style/CounterOverFlow"
+                app:counterTextAppearance="@style/Counter"
+                app:errorTextAppearance="@style/Error"
+                android:layout_below="@+id/divNumeroCuenta"
+                android:layout_alignLeft="@+id/divNumeroCuenta"
+                android:layout_alignStart="@+id/divNumeroCuenta">
+
+                <EditText
+                    android:id="@+id/edtDireccion"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_below="@+id/imageView2"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="27dp"
+                    android:ems="10"
+                    android:hint="Dirección"
+                    android:inputType="text" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/divCorreo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:weightSum="1"
+                app:counterEnabled="true"
+                app:counterMaxLength="30"
+                app:counterOverflowTextAppearance="@style/CounterOverFlow"
+                app:counterTextAppearance="@style/Counter"
+                app:errorTextAppearance="@style/Error"
+                android:layout_below="@+id/divTelefono"
+                android:layout_alignLeft="@+id/divTelefono2"
+                android:layout_alignStart="@+id/divTelefono2"
+                android:layout_marginTop="89dp"
+                android:layout_alignRight="@+id/divTelefono2"
+                android:layout_alignEnd="@+id/divTelefono2">
+
+                <EditText
+                    android:id="@+id/edtCorreo"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_below="@+id/imageView2"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="27dp"
+                    android:ems="10"
+                    android:hint="Correo"
+                    android:inputType="text" />
+
+
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/divContraseña"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:weightSum="1"
+                app:counterEnabled="true"
+                app:counterMaxLength="30"
+                app:counterOverflowTextAppearance="@style/CounterOverFlow"
+                app:counterTextAppearance="@style/Counter"
+                app:errorTextAppearance="@style/Error"
+                android:layout_below="@+id/divDireccion"
+                android:layout_alignLeft="@+id/divDireccion"
+                android:layout_alignStart="@+id/divDireccion"
+                android:layout_alignRight="@+id/divDireccion"
+                android:layout_alignEnd="@+id/divDireccion">
 
                 <EditText
                     android:id="@+id/edtContraseña"
@@ -124,23 +269,27 @@
                     android:ems="10"
                     android:hint="Contraseña"
                     android:inputType="text" />
+
+
             </android.support.design.widget.TextInputLayout>
             <android.support.design.widget.TextInputLayout
-                android:id="@+id/txtVerContraseña"
-                android:layout_width="350dp"
-                android:layout_height="wrap_content"
+                android:id="@+id/divConfContraseña"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:weightSum="1"
                 app:counterEnabled="true"
                 app:counterMaxLength="30"
                 app:counterOverflowTextAppearance="@style/CounterOverFlow"
                 app:counterTextAppearance="@style/Counter"
                 app:errorTextAppearance="@style/Error"
-                android:layout_below="@+id/txtContraseña"
-                android:layout_alignLeft="@+id/txtContraseña"
-                android:layout_alignStart="@+id/txtContraseña">
+                android:layout_below="@+id/divContraseña"
+                android:layout_alignRight="@+id/divContraseña"
+                android:layout_alignEnd="@+id/divContraseña"
+                android:layout_alignLeft="@+id/divContraseña"
+                android:layout_alignStart="@+id/divContraseña">
 
                 <EditText
-                    android:id="@+id/edtVerContraseña"
+                    android:id="@+id/edtConfContraseña"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_below="@+id/imageView2"
@@ -149,7 +298,21 @@
                     android:ems="10"
                     android:hint="Confirmar Contraseña"
                     android:inputType="text" />
+
+
             </android.support.design.widget.TextInputLayout>
+            <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+                android:id="@+id/amSpnTipoUsario"
+                android:layout_width="285dp"
+                android:layout_height="wrap_content"
+                android:hint="Tipo de Usuario"
+                android:textColorHint="#05ab9a"
+                android:layout_below="@+id/divConfContraseña"
+                android:layout_alignLeft="@+id/divConfContraseña"
+                android:layout_alignStart="@+id/divConfContraseña"
+                android:layout_alignRight="@+id/divConfContraseña"
+                android:layout_alignEnd="@+id/divConfContraseña"></com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner>
+
             <Button
                 android:id="@+id/boton_Registrar"
                 android:layout_width="350dp"
@@ -158,9 +321,9 @@
                 android:backgroundTint="@color/colorAccent"
                 android:text="Registrarse"
                 android:textColor="@color/white"
-                android:layout_marginTop="76dp"
-                android:layout_below="@+id/txtContraseña"
-                android:layout_alignLeft="@+id/txtVerContraseña"
-                android:layout_alignStart="@+id/txtVerContraseña" />
+                android:layout_marginTop="81dp"
+                android:layout_below="@+id/amSpnTipoUsario"
+                android:layout_alignLeft="@+id/amSpnTipoUsario"
+                android:layout_alignStart="@+id/amSpnTipoUsario" />
         </RelativeLayout>
 </ScrollView>
