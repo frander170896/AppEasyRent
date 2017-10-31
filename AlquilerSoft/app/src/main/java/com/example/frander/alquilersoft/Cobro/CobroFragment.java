@@ -33,7 +33,7 @@ public class CobroFragment extends Fragment {
       View view = inflater.inflate(R.layout.fragment_cobro, container, false);
         activity = getActivity();
          ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(activity,android.R.layout.simple_dropdown_item_1line,Inquilinos);
-        MaterialBetterSpinner materialDesignSpinner = (MaterialBetterSpinner) view.findViewById(R.id.amApartamento);
+        MaterialBetterSpinner materialDesignSpinner = (MaterialBetterSpinner) view.findViewById(R.id.amSpnTipoUsario);
         materialDesignSpinner.setAdapter(arrayAdapter);
 /*
         ArrayAdapter<String> arrayAdapter2 = new ArrayAdapter<String>(activity,android.R.layout.simple_dropdown_item_1line,Departamentos);
