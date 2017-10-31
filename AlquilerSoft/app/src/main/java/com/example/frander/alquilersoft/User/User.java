@@ -37,6 +37,22 @@ public class User {
         this.type = type;
     }
 
+    public User(String name, String last_name, String identification_card,
+                String phone_number, String second_number, String email,
+                String password, String account_number, String address,
+                int user_type_id) {
+        this.name = name;
+        this.last_name = last_name;
+        this.identification_card = identification_card;
+        this.phone_number = phone_number;
+        this.second_number = second_number;
+        this.email = email;
+        this.password = password;
+        this.account_number = account_number;
+        this.address = address;
+        this.user_type_id = user_type_id;
+    }
+
     public int getId() {
         return id;
     }
@@ -139,5 +155,14 @@ public class User {
 
     public void setIs_active(int is_active) {
         this.is_active = is_active;
+    }
+
+    @Override
+    public String toString() {
+        return "name:" + name + ", last_name:" + last_name + ", identification_card:" +
+                identification_card + ", phone_number:" + phone_number +
+                ", second_number:" + second_number + ", email:" + email + ", password:" + password +
+                ", account_number:" + account_number + ", address:" + address +
+                ", user_type_id:" + user_type_id;
     }
 }
