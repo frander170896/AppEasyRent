@@ -114,61 +114,16 @@
                 >
         </android.support.design.widget.TextInputLayout>
 
-        <android.support.design.widget.TextInputLayout
-        android:id="@+id/divLongitud"
-        android:layout_width="350dp"
-        android:layout_height="100dp"
-        android:layout_below="@+id/divDireccion"
-        android:layout_alignLeft="@+id/divDireccion"
-        android:layout_alignStart="@+id/divDireccion">
-
-            <EditText
-                android:id="@+id/edtLongitud"
-                android:layout_width="300dp"
-                android:layout_height="40dp"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_weight="1"
-                android:ems="10"
-                android:hint="Longitud"
-                android:inputType="number"
-                tools:layout_editor_absoluteX="8dp"
-                tools:layout_editor_absoluteY="40dp" />
-            >
-    </android.support.design.widget.TextInputLayout>
-
-        <android.support.design.widget.TextInputLayout
-            android:id="@+id/divLatitud"
-            android:layout_width="350dp"
-            android:layout_height="100dp"
-            android:layout_below="@+id/divLongitud"
-            android:layout_alignLeft="@+id/divLongitud"
-            android:layout_alignStart="@+id/divLongitud">
-
-                <EditText
-                    android:id="@+id/edtLatitud"
-                    android:layout_width="300dp"
-                    android:layout_height="40dp"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:hint="Latitud"
-                    android:inputType="number"
-                    tools:layout_editor_absoluteX="8dp"
-                    tools:layout_editor_absoluteY="40dp" />
-                >
-        </android.support.design.widget.TextInputLayout>
-
         <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
             android:id="@+id/amSpnProvincia"
             android:layout_width="285dp"
             android:layout_height="wrap_content"
             android:hint="Provincia"
             android:textColorHint="#05ab9a"
-            android:layout_below="@+id/divLatitud"
-            android:layout_alignLeft="@+id/divLatitud"
-            android:layout_alignStart="@+id/divLatitud"></com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner>
+            android:layout_below="@+id/divImagen"
+            android:layout_alignLeft="@+id/divImagen"
+            android:layout_alignStart="@+id/divImagen"
+            android:layout_marginTop="20dp"></com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner>
 
         <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
             android:id="@+id/amSpnCanton"
@@ -176,10 +131,10 @@
             android:layout_height="wrap_content"
             android:hint="Cantón"
             android:textColorHint="#05ab9a"
-            android:layout_marginTop="26dp"
-            android:layout_below="@+id/amSpnDFistrito"
-            android:layout_alignLeft="@+id/amSpnDFistrito"
-            android:layout_alignStart="@+id/amSpnDFistrito"></com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner>
+            android:layout_below="@+id/amSpnProvincia"
+            android:layout_alignLeft="@+id/amSpnProvincia"
+            android:layout_alignStart="@+id/amSpnProvincia"
+            android:layout_marginTop="32dp"></com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner>
 
         <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
             android:id="@+id/amSpnDFistrito"
@@ -187,19 +142,19 @@
             android:layout_height="wrap_content"
             android:hint="Distrito"
             android:textColorHint="#05ab9a"
-            android:layout_marginTop="30dp"
-            android:layout_below="@+id/amSpnProvincia"
-            android:layout_alignLeft="@+id/amSpnProvincia"
-            android:layout_alignStart="@+id/amSpnProvincia"></com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner>
+            android:layout_below="@+id/amSpnCanton"
+            android:layout_alignLeft="@+id/amSpnCanton"
+            android:layout_alignStart="@+id/amSpnCanton"
+            android:layout_marginTop="29dp"></com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner>
 
     <android.support.design.widget.TextInputLayout
         android:id="@+id/divImagen"
         android:layout_width="350dp"
         android:layout_height="100dp"
-        android:layout_below="@+id/amSpnCanton"
-        android:layout_alignLeft="@+id/amSpnCanton"
-        android:layout_alignStart="@+id/amSpnCanton"
-        android:layout_marginTop="11dp">
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/divDireccion"
+        android:layout_alignLeft="@+id/divDireccion"
+        android:layout_alignStart="@+id/divDireccion">
 
             <EditText
                 android:id="@+id/edtImagen"
@@ -218,16 +173,39 @@
     </android.support.design.widget.TextInputLayout>
         <Button
             android:id="@+id/button"
-            android:layout_width="300dp"
+            android:layout_width="100dp"
             android:layout_height="50dp"
             android:layout_weight="1"
             android:backgroundTint="@color/colorAccent"
-            android:text="Crear"
+            android:text="Guardar"
             android:textColor="@color/white"
+            android:layout_marginTop="42dp"
+            android:layout_below="@+id/amSpnDFistrito"
+            android:layout_alignLeft="@+id/amSpnDFistrito"
+            android:layout_alignStart="@+id/amSpnDFistrito"></Button>
 
-            android:layout_below="@+id/divImagen"
-            android:layout_alignLeft="@+id/divImagen"
-            android:layout_alignStart="@+id/divImagen"></Button>
+        <Button
+            android:id="@+id/guardarPublicar"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/colorAccent"
+            android:text="Guardar y Publicar"
+            android:layout_alignTop="@+id/button"
+            android:layout_centerHorizontal="true" />
+
+        <Button
+            android:id="@+id/cancelar"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/colorAccent"
+            android:text="Cancelar"
+            android:layout_alignTop="@+id/guardarPublicar"
+            android:layout_toRightOf="@+id/guardarPublicar"
+            android:layout_toEndOf="@+id/guardarPublicar"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp" />
 
     </RelativeLayout>
 </ScrollView>
