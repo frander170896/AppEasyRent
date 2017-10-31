@@ -6,6 +6,7 @@ package com.example.frander.alquilersoft.InterfaceRetrofit;
 
 public class ContenedorUrlApi {
 
-    public static final String URL_API = "http://192.168.56.1/easyrent/api/";
-    public static final String URL_USER = "tb_user";
+    public static final String URL_API = "https://apieasyrent.000webhostapp.com/v1/";
+    public static final String URL_USER = "getUsers";
+    public static final String URL_LONGIN = "login";
 }
