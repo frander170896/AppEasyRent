@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.example.frander.alquilersoft.MenuUsuario.MenuUsuario;
@@ -19,6 +20,7 @@ public class Login extends AppCompatActivity {
     Button btnRegistrarse;
     EditText cedula;
     EditText clave;
+    ProgressBar progressBar;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,11 +32,13 @@ public class Login extends AppCompatActivity {
         btnIngresar = (Button)findViewById(R.id.boton_aceptar);
         cedula = (EditText) findViewById(R.id.edtCedula);
         clave = (EditText) findViewById(R.id.edtContraseña);
+        progressBar = (ProgressBar) findViewById(R.id.progressBarLogin);
 
         btnRegistrarse = (Button)findViewById(R.id.boton_Registrarse);
         btnIngresar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                progressBar.setVisibility(View.VISIBLE);
                 String temCedula = cedula.getText().toString();
                 String tempClave = clave.getText().toString();
 
