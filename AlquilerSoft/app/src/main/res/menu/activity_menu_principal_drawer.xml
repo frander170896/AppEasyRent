@@ -7,21 +7,17 @@
             android:icon="@mipmap/ic_cobrar"
             android:title="@string/Cobrar" />
         <item
-            android:id="@+id/nav_inquilino"
-            android:icon="@mipmap/ic_launcher"
-            android:title="@string/Inquilino" />
-        <item
             android:id="@+id/nav_mostrarInquilinos"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@mipmap/ic_launcher"
             android:title="@string/M_Inquilinos" />
         <item
             android:id="@+id/nav_Departamentos"
             android:icon="@mipmap/ic_departamentos"
-            android:title="@string/Depertamentos" />
+            android:title="Crear Apartamentos" />
         <item
             android:id="@+id/nav_mostrarDepas"
             android:icon="@drawable/ic_menu_gallery"
-            android:title="@string/M_Departamentos" />
+            android:title="Ver Apartamentos" />
         <item
             android:id="@+id/nav_manage"
             android:icon="@drawable/ic_menu_manage"
