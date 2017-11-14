@@ -164,6 +164,7 @@ public class ApartamentosFragment extends Fragment {
             }
         });
         crearConexionRetrofit();
+        get_Distric();
         get_Cantones();
         get_Provinces();
 
@@ -189,9 +190,9 @@ public class ApartamentosFragment extends Fragment {
         if(!cantones.isEmpty() && !distritos.isEmpty()){
             for(int i=0;i<cantones.size();i++){
                 if(cantones.get(i).getName().equalsIgnoreCase(opcion)){
-                    canton.setId(provincias.get(i).getId());
-                    canton.setName(provincias.get(i).getName());
-                    canton.setIs_active(provincias.get(i).getIs_active());
+                    canton.setId(cantones.get(i).getId());
+                    canton.setName(cantones.get(i).getName());
+                    canton.setIs_active(cantones.get(i).getIs_active());
                     i=cantones.size();
                 }
             }
