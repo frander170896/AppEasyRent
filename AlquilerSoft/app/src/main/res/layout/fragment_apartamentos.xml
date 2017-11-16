@@ -8,7 +8,7 @@
 
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="2000dp"
         android:background="#ffffff">
 
         <android.support.design.widget.TextInputLayout
@@ -113,64 +113,128 @@
                     tools:layout_editor_absoluteY="40dp" />
                 >
         </android.support.design.widget.TextInputLayout>
-
-        <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
-            android:id="@+id/amSpnProvincia"
-            android:layout_width="285dp"
-            android:layout_height="wrap_content"
-            android:hint="Provincia"
-            android:textColorHint="#05ab9a"
-            android:layout_below="@+id/divImagen"
-            android:layout_alignLeft="@+id/divImagen"
-            android:layout_alignStart="@+id/divImagen"
-            android:layout_marginTop="20dp"></com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner>
-
-        <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
-            android:id="@+id/amSpnCanton"
-            android:layout_width="285dp"
-            android:layout_height="wrap_content"
-            android:hint="Cantón"
-            android:textColorHint="#05ab9a"
-            android:layout_below="@+id/amSpnProvincia"
-            android:layout_alignLeft="@+id/amSpnProvincia"
-            android:layout_alignStart="@+id/amSpnProvincia"
-            android:layout_marginTop="32dp"></com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner>
-
-        <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
-            android:id="@+id/amSpnDFistrito"
-            android:layout_width="285dp"
-            android:layout_height="wrap_content"
-            android:hint="Distrito"
-            android:textColorHint="#05ab9a"
-            android:layout_below="@+id/amSpnCanton"
-            android:layout_alignLeft="@+id/amSpnCanton"
-            android:layout_alignStart="@+id/amSpnCanton"
-            android:layout_marginTop="29dp"></com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner>
-
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/divImagen"
+        <android.support.design.widget.TextInputLayout
+        android:id="@+id/divPrecio"
         android:layout_width="350dp"
         android:layout_height="100dp"
-        android:layout_marginTop="10dp"
         android:layout_below="@+id/divDireccion"
         android:layout_alignLeft="@+id/divDireccion"
         android:layout_alignStart="@+id/divDireccion">
 
-            <EditText
-                android:id="@+id/edtImagen"
+        <EditText
+            android:id="@+id/edtPrecio"
+            android:layout_width="300dp"
+            android:layout_height="40dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="Precio"
+            android:inputType="number"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="40dp" />
+        >
+        </android.support.design.widget.TextInputLayout>
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/divProvincia"
+            android:layout_width="350dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="49dp"
+            android:layout_below="@+id/cbDisponible"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true">
+
+            <TextView
+                android:id="@+id/txtProvincia"
                 android:layout_width="300dp"
                 android:layout_height="40dp"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_weight="1"
-                android:ems="10"
-                android:hint="Imagen"
-                android:inputType="text"
-                tools:layout_editor_absoluteX="8dp"
-                tools:layout_editor_absoluteY="40dp" />
-            >
+                android:text="Provincia"
+                android:textSize="18dp"
+                />
 
-    </android.support.design.widget.TextInputLayout>
+            <Spinner
+                android:id="@+id/spProvincia"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+
+                android:layout_alignEnd="@+id/cancelar"
+                android:layout_alignRight="@+id/cancelar"
+                android:layout_below="@+id/divImagen" />
+        </android.support.design.widget.TextInputLayout>
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/divCanton"
+            android:layout_width="350dp"
+            android:layout_height="100dp"
+            android:layout_below="@+id/divProvincia"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true">
+
+            <TextView
+                android:id="@+id/txtCanton"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:text="Cantón"
+                android:textSize="18dp" />
+
+            <Spinner
+                android:id="@+id/spCanton"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+
+                android:layout_alignEnd="@+id/cancelar"
+                android:layout_alignRight="@+id/cancelar"
+                android:layout_below="@+id/divImagen" />
+        </android.support.design.widget.TextInputLayout>
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/divDistrito"
+            android:layout_width="350dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="16dp"
+            android:layout_below="@+id/divCanton"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true">
+
+            <TextView
+                android:id="@+id/txtDistrito"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:text="Distrito"
+                android:textSize="18dp"
+                />
+
+            <Spinner
+                android:id="@+id/spDistrito"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+
+                android:layout_alignEnd="@+id/cancelar"
+                android:layout_alignRight="@+id/cancelar"
+                android:layout_below="@+id/divImagen" />
+        </android.support.design.widget.TextInputLayout>
+
+
+
+
+        <ImageView
+            android:id="@+id/imgApartamento"
+            android:layout_width="300dp"
+            android:layout_height="200dp"
+            app:srcCompat="@android:drawable/ic_menu_camera"
+            android:layout_marginTop="31dp"
+            android:layout_below="@+id/divDistrito"
+            android:layout_alignLeft="@+id/divDistrito"
+            android:layout_alignStart="@+id/divDistrito" />
+
+        <Button
+            android:id="@+id/btnCargarImagen"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="32dp"
+            android:text="Cargar Imagen"
+            android:layout_below="@+id/imgApartamento"
+            android:layout_alignLeft="@+id/imgApartamento"
+            android:layout_alignStart="@+id/imgApartamento" />
+
         <Button
             android:id="@+id/button"
             android:layout_width="100dp"
@@ -179,10 +243,10 @@
             android:backgroundTint="@color/colorAccent"
             android:text="Guardar"
             android:textColor="@color/white"
-            android:layout_marginTop="42dp"
-            android:layout_below="@+id/amSpnDFistrito"
-            android:layout_alignLeft="@+id/amSpnDFistrito"
-            android:layout_alignStart="@+id/amSpnDFistrito"></Button>
+            android:layout_marginTop="102dp"
+            android:layout_below="@+id/btnCargarImagen"
+            android:layout_alignLeft="@+id/divNombreApartamento"
+            android:layout_alignStart="@+id/divNombreApartamento"></Button>
 
         <Button
             android:id="@+id/guardarPublicar"
@@ -192,7 +256,8 @@
             android:backgroundTint="@color/colorAccent"
             android:text="Guardar y Publicar"
             android:layout_alignTop="@+id/button"
-            android:layout_centerHorizontal="true" />
+            android:layout_toRightOf="@+id/button"
+            android:layout_toEndOf="@+id/button" />
 
         <Button
             android:id="@+id/cancelar"
@@ -201,11 +266,22 @@
             android:textColor="@color/white"
             android:backgroundTint="@color/colorAccent"
             android:text="Cancelar"
-            android:layout_alignTop="@+id/guardarPublicar"
             android:layout_toRightOf="@+id/guardarPublicar"
             android:layout_toEndOf="@+id/guardarPublicar"
-            android:layout_marginLeft="10dp"
-            android:layout_marginStart="10dp" />
+            android:layout_alignBottom="@+id/guardarPublicar" />
+
+        <CheckBox
+            android:id="@+id/cbDisponible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/divProvincia"
+            android:layout_alignStart="@+id/divProvincia"
+            android:layout_below="@+id/divPrecio"
+            android:layout_marginLeft="14dp"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="19dp"
+            android:text="Disponible" />
+
 
     </RelativeLayout>
 </ScrollView>

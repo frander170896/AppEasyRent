@@ -77,10 +77,7 @@ public class MenuPrincipal extends AppCompatActivity
         boolean transacionFragment = false;
         Fragment fragment = null;
 
-        if (id == R.id.nav_inquilino) {
-            fragment = new InquilinoFragment();
-            transacionFragment = true;
-        } else if (id == R.id.nav_mostrarInquilinos) {
+        if (id == R.id.nav_mostrarInquilinos) {
             fragment = new Mostrar_inquilinos();
             transacionFragment=true;
         } else if (id == R.id.nav_Departamentos) {

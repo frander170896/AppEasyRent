@@ -41,11 +41,11 @@ public class MostrarApartamentosFragment extends Fragment {
     }
 
     private void llenarApartamentos() {
-        apartamentos.add(new Apartamentos(1,1,25000,"La victoria,Rio Frio",1,0,R.mipmap.ic_p1));
+       /* apartamentos.add(new Apartamentos(1,1,25000,"La victoria,Rio Frio",1,0,R.mipmap.ic_p1));
         apartamentos.add(new Apartamentos(2,2,35000,"La victoria,Rio Frio",3,1,R.mipmap.ic_p2));
         apartamentos.add(new Apartamentos(3,3,35000,"La victoria,Rio Frio",3,1,R.mipmap.ic_p3));
         apartamentos.add(new Apartamentos(4,4,35000,"La victoria,Rio Frio",3,1,R.mipmap.ic_p4));
-        apartamentos.add(new Apartamentos(5,5,35000,"La victoria,Rio Frio",3,1,R.mipmap.ic_p5));
+        apartamentos.add(new Apartamentos(5,5,35000,"La victoria,Rio Frio",3,1,R.mipmap.ic_p5));*/
     }
 
 }

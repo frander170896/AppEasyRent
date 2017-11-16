@@ -40,12 +40,12 @@ public class publicacion_Apartamentos extends Fragment {
     }
 
     private void llenarLista() {
-        apartamentos.add(new Apartamentos(25000,"+506 5467-8798","Rio Frio la Victoria",3,R.mipmap.ic_p1));
+        /*apartamentos.add(new Apartamentos(25000,"+506 5467-8798","Rio Frio la Victoria",3,R.mipmap.ic_p1));
         apartamentos.add(new Apartamentos(30000,"+506 6076-8778","Rio Frio la Victoria",2,R.mipmap.ic_p2));
         apartamentos.add(new Apartamentos(25000,"+506 8867-5498","Rio Frio la Victoria",1,R.mipmap.ic_p3));
         apartamentos.add(new Apartamentos(55000,"+506 5467-8798","Rio Frio la Victoria",3,R.mipmap.ic_p4));
         apartamentos.add(new Apartamentos(25000,"+506 8867-5498","Rio Frio la Victoria",4,R.mipmap.ic_p5));
-        apartamentos.add(new Apartamentos(65000,"+506 6076-8778","Rio Frio la Victoria",1,R.mipmap.ic_p6));
+        apartamentos.add(new Apartamentos(65000,"+506 6076-8778","Rio Frio la Victoria",1,R.mipmap.ic_p6));*/
     }
 
 }
