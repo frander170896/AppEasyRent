@@ -5,6 +5,7 @@ import com.example.frander.alquilersoft.Canton.Canton;
 import com.example.frander.alquilersoft.Distric.Distric;
 import com.example.frander.alquilersoft.Province.Province;
 import com.example.frander.alquilersoft.User.User;
+import com.example.frander.alquilersoft.User.UserId;
 import com.example.frander.alquilersoft.User.UserLogin;
 
 import java.util.ArrayList;
@@ -43,4 +44,7 @@ public interface ConexionApiEasyRent {
 
     @POST(ContenedorUrlApi.URL_ADDUSER)
     Call<Boolean> addUser(@Body User user);
+
+    @POST(ContenedorUrlApi.URL_GETAPARTMENTBYLESSEE)
+    Call<ArrayList<Apartamentos>> getApartmentByLessee(@Body UserId userId);
 }

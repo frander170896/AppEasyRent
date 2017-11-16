@@ -1,5 +1,6 @@
 package com.example.frander.alquilersoft;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -46,7 +47,7 @@ public class Login extends AppCompatActivity {
                 .baseUrl(ContenedorUrlApi.URL_API)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
-        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        sharedPreferences = getSharedPreferences("userLoginPreference", Context.MODE_PRIVATE);
         inicializadorInterfaz();
     }
 
@@ -81,6 +82,7 @@ public class Login extends AppCompatActivity {
                             preferenceEditor.putString("numeroCuenta", userList.get(0).getAccount_number());
                             preferenceEditor.putString("cedula", userList.get(0).getIdentification_card());
                             preferenceEditor.putString("email", userList.get(0).getEmail());
+                            preferenceEditor.commit();
                             if(userList.get(0).getUser_type_name().equalsIgnoreCase("Administrador")){
                                 Intent intent = new Intent(Login.this,MenuPrincipal.class);
                                 startActivity(intent);
