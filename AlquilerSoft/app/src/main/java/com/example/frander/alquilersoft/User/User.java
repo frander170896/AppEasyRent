@@ -20,6 +20,10 @@ public class User {
     private int user_type_id;
     private int is_active;
 
+    public User(int id) {
+        this.id = id;
+    }
+
     public User(int id, String name,
                 String last_name, String identification_card,
                 String phone_number, String second_number, String email,
@@ -159,7 +163,7 @@ public class User {
 
     @Override
     public String toString() {
-        return "name:" + name + ", last_name:" + last_name + ", identification_card:" +
+        return "userId:" + id + "name:" + name + ", last_name:" + last_name + ", identification_card:" +
                 identification_card + ", phone_number:" + phone_number +
                 ", second_number:" + second_number + ", email:" + email + ", password:" + password +
                 ", account_number:" + account_number + ", address:" + address +

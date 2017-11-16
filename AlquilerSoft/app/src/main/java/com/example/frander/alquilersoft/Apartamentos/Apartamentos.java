@@ -18,8 +18,12 @@ public class Apartamentos {
     String description;
     String adress;
     String Image;
+    String distric;
+    String statusName;
 
-    public Apartamentos(int id, int capacity, int lessee_id, int status_id, int district_id, int is_active, float price, String name, String description, String adress,String Image) {
+    public Apartamentos(int id, int capacity, int lessee_id, int status_id, int district_id,
+                        int is_active, float price, String name, String description, String adress,
+                        String Image) {
         this.id = id;
         this.capacity = capacity;
         this.lessee_id = lessee_id;
@@ -33,7 +37,8 @@ public class Apartamentos {
         this.Image = Image;
     }
 
-    public Apartamentos(int capacity, int lessee_id, int status_id, int district_id, int is_active, float price, String name, String description, String adress,String Image) {
+    public Apartamentos(int capacity, int lessee_id, int status_id, int district_id, int is_active,
+                        float price, String name, String description, String adress,String Image) {
         this.capacity = capacity;
         this.lessee_id = lessee_id;
         this.status_id = status_id;
@@ -44,6 +49,24 @@ public class Apartamentos {
         this.description = description;
         this.adress = adress;
         this.Image = Image;
+    }
+
+    public Apartamentos(int id, int capacity, int lessee_id, int status_id, int district_id,
+                        int is_active, float price, String name, String description,
+                        String adress, String image, String distric, String statusName) {
+        this.id = id;
+        this.capacity = capacity;
+        this.lessee_id = lessee_id;
+        this.status_id = status_id;
+        this.district_id = district_id;
+        this.is_active = is_active;
+        this.price = price;
+        this.name = name;
+        this.description = description;
+        this.adress = adress;
+        Image = image;
+        this.distric = distric;
+        this.statusName = statusName;
     }
 
     public int getId() {
@@ -124,6 +147,30 @@ public class Apartamentos {
 
     public void setAdress(String adress) {
         this.adress = adress;
+    }
+
+    public String getImage() {
+        return Image;
+    }
+
+    public void setImage(String image) {
+        Image = image;
+    }
+
+    public String getDistric() {
+        return distric;
+    }
+
+    public void setDistric(String distric) {
+        this.distric = distric;
+    }
+
+    public String getStatusName() {
+        return statusName;
+    }
+
+    public void setStatusName(String statusName) {
+        this.statusName = statusName;
     }
 
     @Override

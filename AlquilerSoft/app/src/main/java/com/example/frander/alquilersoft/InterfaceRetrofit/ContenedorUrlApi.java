@@ -15,4 +15,5 @@ public class ContenedorUrlApi {
     public static final String URL_USER = "getUsers";
     public static final String URL_LONGIN = "login";
     public static final String URL_ADDUSER = "addUser";
+    public static final String URL_GETAPARTMENTBYLESSEE = "getApartmentByLessee";
 }

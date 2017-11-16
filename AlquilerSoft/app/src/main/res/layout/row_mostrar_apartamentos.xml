@@ -1,120 +1,128 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="290dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="5dp"
+    app:cardElevation="6dp"
+    app:cardUseCompatPadding="true">
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <ImageView
-        android:id="@+id/imgApartamento"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="14dp"
-        android:layout_marginStart="14dp"
-        android:layout_marginTop="36dp" />
+        <ImageView
+            android:id="@+id/imgApartamento"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="14dp"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="36dp" />
 
-    <TextView
-        android:id="@+id/txtNumeroD"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        android:layout_alignTop="@+id/imgApartamento"
-        android:layout_toRightOf="@+id/txtCapacidad"
-        android:layout_toEndOf="@+id/txtCapacidad" />
+        <TextView
+            android:id="@+id/txtNumeroD"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:layout_alignTop="@+id/imgApartamento"
+            android:layout_toRightOf="@+id/txtCapacidad"
+            android:layout_toEndOf="@+id/txtCapacidad" />
 
-    <TextView
-        android:id="@+id/lbPrecio"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="17dp"
-        android:text="Precio:"
-        android:layout_below="@+id/txtNumeroD"
-        android:layout_toRightOf="@+id/imgApartamento"
-        android:layout_toEndOf="@+id/imgApartamento"
-        android:layout_marginLeft="19dp"
-        android:layout_marginStart="19dp" />
+        <TextView
+            android:id="@+id/lbPrecio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="17dp"
+            android:text="Precio:"
+            android:layout_below="@+id/txtNumeroD"
+            android:layout_toRightOf="@+id/imgApartamento"
+            android:layout_toEndOf="@+id/imgApartamento"
+            android:layout_marginLeft="19dp"
+            android:layout_marginStart="19dp" />
 
-    <TextView
-        android:id="@+id/lbCapacidad"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Capacidad:"
-        android:layout_marginBottom="19dp"
-        android:layout_alignBottom="@+id/imgApartamento"
-        android:layout_alignLeft="@+id/lbPrecio"
-        android:layout_alignStart="@+id/lbPrecio" />
+        <TextView
+            android:id="@+id/lbCapacidad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Capacidad:"
+            android:layout_marginBottom="19dp"
+            android:layout_alignBottom="@+id/imgApartamento"
+            android:layout_alignLeft="@+id/lbPrecio"
+            android:layout_alignStart="@+id/lbPrecio" />
 
-    <TextView
-        android:id="@+id/txtCapacidad"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/lbCapacidad"
-        android:layout_marginLeft="28dp"
-        android:layout_marginStart="28dp"
-        android:layout_toEndOf="@+id/lbCapacidad"
-        android:layout_toRightOf="@+id/lbCapacidad"
-        android:text="TextView" />
+        <TextView
+            android:id="@+id/txtCapacidad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/lbCapacidad"
+            android:layout_marginLeft="28dp"
+            android:layout_marginStart="28dp"
+            android:layout_toEndOf="@+id/lbCapacidad"
+            android:layout_toRightOf="@+id/lbCapacidad"
+            android:text="TextView" />
 
-    <TextView
-        android:id="@+id/txtPrecio"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="textView"
-        android:layout_alignBaseline="@+id/lbPrecio"
-        android:layout_alignBottom="@+id/lbPrecio"
-        android:layout_toRightOf="@+id/lbCapacidad"
-        android:layout_toEndOf="@+id/lbCapacidad" />
+        <TextView
+            android:id="@+id/txtPrecio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="textView"
+            android:layout_alignBaseline="@+id/lbPrecio"
+            android:layout_alignBottom="@+id/lbPrecio"
+            android:layout_toRightOf="@+id/lbCapacidad"
+            android:layout_toEndOf="@+id/lbCapacidad" />
 
-    <TextView
-        android:id="@+id/lbUbicacion"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/imgApartamento"
-        android:layout_alignStart="@+id/imgApartamento"
-        android:layout_below="@+id/imgApartamento"
-        android:layout_marginTop="27dp"
-        android:text="Ubicación:" />
+        <TextView
+            android:id="@+id/lbUbicacion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/imgApartamento"
+            android:layout_alignStart="@+id/imgApartamento"
+            android:layout_below="@+id/imgApartamento"
+            android:layout_marginTop="27dp"
+            android:text="Ubicación:" />
 
-    <TextView
-        android:id="@+id/txtUbicacion"
-        android:layout_width="100dp"
-        android:layout_height="40dp"
-        android:text="TextView"
-        android:layout_alignBaseline="@+id/lbUbicacion"
-        android:layout_alignBottom="@+id/lbUbicacion"
-        android:layout_alignRight="@+id/lbnumero"
-        android:layout_alignEnd="@+id/lbnumero"
-        android:layout_toRightOf="@+id/lbUbicacion"
-        android:layout_toEndOf="@+id/lbUbicacion" />
+        <TextView
+            android:id="@+id/txtUbicacion"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:text="TextView"
+            android:layout_alignBaseline="@+id/lbUbicacion"
+            android:layout_alignBottom="@+id/lbUbicacion"
+            android:layout_alignRight="@+id/lbnumero"
+            android:layout_alignEnd="@+id/lbnumero"
+            android:layout_toRightOf="@+id/lbUbicacion"
+            android:layout_toEndOf="@+id/lbUbicacion" />
 
-    <TextView
-        android:id="@+id/lbDisponibilidad"
-        android:layout_width="100dp"
-        android:layout_height="30dp"
-        android:text="Estado:"
-        android:layout_marginTop="20dp"
-        android:layout_below="@+id/txtUbicacion"
-        android:layout_alignLeft="@+id/lbUbicacion"
-        android:layout_alignStart="@+id/lbUbicacion" />
+        <TextView
+            android:id="@+id/lbDisponibilidad"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:text="Estado:"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/txtUbicacion"
+            android:layout_alignLeft="@+id/lbUbicacion"
+            android:layout_alignStart="@+id/lbUbicacion" />
 
-    <TextView
-        android:id="@+id/txtDisponible"
-        android:layout_width="100dp"
-        android:layout_height="30dp"
-        android:text="TextView"
-        android:layout_alignBaseline="@+id/lbDisponibilidad"
-        android:layout_alignBottom="@+id/lbDisponibilidad"
-        android:layout_toRightOf="@+id/lbDisponibilidad"
-        android:layout_toEndOf="@+id/lbDisponibilidad" />
+        <TextView
+            android:id="@+id/txtDisponible"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:text="TextView"
+            android:layout_alignBaseline="@+id/lbDisponibilidad"
+            android:layout_alignBottom="@+id/lbDisponibilidad"
+            android:layout_toRightOf="@+id/lbDisponibilidad"
+            android:layout_toEndOf="@+id/lbDisponibilidad" />
 
-    <TextView
-        android:id="@+id/lbnumero"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/lbPrecio"
-        android:layout_alignLeft="@+id/lbPrecio"
-        android:layout_alignStart="@+id/lbPrecio"
-        android:text="Número Apartamento" />
+        <TextView
+            android:id="@+id/lbnumero"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/lbPrecio"
+            android:layout_alignLeft="@+id/lbPrecio"
+            android:layout_alignStart="@+id/lbPrecio"
+            android:text="Número Apartamento" />
 
-</RelativeLayout>
+    </RelativeLayout>
+</android.support.v7.widget.CardView>

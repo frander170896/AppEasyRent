@@ -1,5 +1,6 @@
 package com.example.frander.alquilersoft.Apartamentos;
 
+import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,9 +18,11 @@ import java.util.ArrayList;
 
 public class AdaptadorMostrarDepas extends RecyclerView.Adapter<AdaptadorMostrarDepas.ApartamentosViewHolder> {
 
+    private Context context;
     ArrayList<Apartamentos> apartamentos;
 
-    public AdaptadorMostrarDepas(ArrayList<Apartamentos> apartamentos) {
+    public AdaptadorMostrarDepas(ArrayList<Apartamentos> apartamentos, Context context) {
+        this.context = context;
         this.apartamentos = apartamentos;
     }
 
@@ -31,21 +34,17 @@ public class AdaptadorMostrarDepas extends RecyclerView.Adapter<AdaptadorMostrar
     }
 
     @Override
-    public void onBindViewHolder(ApartamentosViewHolder holder, int position) {
-       /* holder.txtNumero.setText(apartamentos.get(position).getNombre+"");
-        holder.txtPrecio.setText("₡"+apartamentos.get(position).getPrecio()+"");
-        if(apartamentos.get(position).getCapacidad() == 1){
-            holder.txtCapacidad.setText(apartamentos.get(position).getCapacidad()+" persona");
+    public void onBindViewHolder(final ApartamentosViewHolder holder, final int position) {
+       holder.txtNumero.setText(apartamentos.get(position).getName());
+        holder.txtPrecio.setText("₡"+apartamentos.get(position).getPrice());
+        if(apartamentos.get(position).getCapacity() == 1){
+            holder.txtCapacidad.setText(apartamentos.get(position).getCapacity()+" persona");
         }else{
-            holder.txtCapacidad.setText(apartamentos.get(position).getCapacidad()+" personas");
+            holder.txtCapacidad.setText(apartamentos.get(position).getCapacity()+" personas");
         }
-        holder.txtUbicacion.setText(apartamentos.get(position).getUbicacion());
-        if(apartamentos.get(position).getDisponible() == 0){
-            holder.txtDisponible.setText("Disponible");
-        }else{
-            holder.txtDisponible.setText("Ocupado");
-        }
-        holder.Img.setImageResource(apartamentos.get(position).getImagen());*/
+        holder.txtUbicacion.setText(apartamentos.get(position).getAdress());
+        holder.txtDisponible.setText(apartamentos.get(position).getStatusName());
+        holder.Img.setImageResource(R.mipmap.ic_p1);
     }
 
     @Override
