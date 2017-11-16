@@ -18,7 +18,7 @@
         android:layout_marginTop="76dp"
         android:weightSum="1"
         app:counterEnabled="true"
-        app:counterMaxLength="30"
+        app:counterMaxLength="50"
         app:counterOverflowTextAppearance="@style/CounterOverFlow"
         app:counterTextAppearance="@style/Counter"
         app:errorTextAppearance="@style/Error"
@@ -34,8 +34,8 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="27dp"
             android:ems="10"
-            android:hint="Cédula"
-            android:inputType="text" />
+            android:hint="Email"
+            android:inputType="textEmailAddress" />
 
 
     </android.support.design.widget.TextInputLayout>
