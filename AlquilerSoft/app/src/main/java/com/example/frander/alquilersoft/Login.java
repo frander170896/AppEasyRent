@@ -81,8 +81,13 @@ public class Login extends AppCompatActivity {
                             preferenceEditor.putString("numeroCuenta", userList.get(0).getAccount_number());
                             preferenceEditor.putString("cedula", userList.get(0).getIdentification_card());
                             preferenceEditor.putString("email", userList.get(0).getEmail());
-                            Intent intent = new Intent(Login.this,MenuPrincipal.class);
-                            startActivity(intent);
+                            if(userList.get(0).getUser_type_name().equalsIgnoreCase("Administrador")){
+                                Intent intent = new Intent(Login.this,MenuPrincipal.class);
+                                startActivity(intent);
+                            }else{
+                                Intent intent = new Intent(Login.this,MenuUsuario.class);
+                                startActivity(intent);
+                            }
                         }else {
                             Toast.makeText(getApplicationContext(),"Datos Incorrectos",Toast.LENGTH_LONG).show();
                         }

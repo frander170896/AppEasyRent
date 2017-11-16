@@ -22,4 +22,7 @@ public interface ConexionApiEasyRent {
 
     @POST(ContenedorUrlApi.URL_LONGIN)
     Call<ArrayList<User>> login(@Body UserLogin userLogin);
+
+    @POST(ContenedorUrlApi.URL_ADDUSER)
+    Call<Boolean> addUser(@Body User user);
 }

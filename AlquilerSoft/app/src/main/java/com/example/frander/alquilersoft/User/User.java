@@ -16,14 +16,14 @@ public class User {
     private String password;
     private String account_number;
     private String address;
-    private String type;
+    private String user_type_name;
     private int user_type_id;
     private int is_active;
 
     public User(int id, String name,
                 String last_name, String identification_card,
                 String phone_number, String second_number, String email,
-                String password, String account_number, String address, String type) {
+                String password, String account_number, String address, String user_type_name) {
         this.id = id;
         this.name = name;
         this.last_name = last_name;
@@ -34,7 +34,7 @@ public class User {
         this.password = password;
         this.account_number = account_number;
         this.address = address;
-        this.type = type;
+        this.user_type_name = user_type_name;
     }
 
     public User(String name, String last_name, String identification_card,
@@ -133,12 +133,12 @@ public class User {
         this.address = address;
     }
 
-    public String getType() {
-        return type;
+    public String getUser_type_name() {
+        return user_type_name;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setUser_type_name(String type) {
+        this.user_type_name = type;
     }
 
     public int getUser_type_id() {
