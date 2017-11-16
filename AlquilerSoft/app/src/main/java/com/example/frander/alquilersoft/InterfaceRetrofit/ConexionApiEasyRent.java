@@ -1,14 +1,16 @@
 package com.example.frander.alquilersoft.InterfaceRetrofit;
 
+import com.example.frander.alquilersoft.Apartamentos.Apartamentos;
+import com.example.frander.alquilersoft.Canton.Canton;
+import com.example.frander.alquilersoft.Distric.Distric;
+import com.example.frander.alquilersoft.Province.Province;
 import com.example.frander.alquilersoft.User.User;
-import com.example.frander.alquilersoft.User.UserLogin;
 
 import java.util.ArrayList;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
-import retrofit2.http.Headers;
 import retrofit2.http.POST;
 
 /**
@@ -17,12 +19,17 @@ import retrofit2.http.POST;
 
 public interface ConexionApiEasyRent {
 
-    @GET(ContenedorUrlApi.URL_USER)
-    Call<ArrayList<User>> getAllUser();
+    /*@GET(ContenedorUrlApi.URL_USER)
+    Call<User> obtenerUsuario();*/
 
-    @POST(ContenedorUrlApi.URL_LONGIN)
-    Call<ArrayList<User>> login(@Body UserLogin userLogin);
+    @GET(ContenedorUrlApi.URL_Province)
+    Call<ArrayList<Province>> get_Provinces();
+    @GET(ContenedorUrlApi.URL_Canton)
+    Call<ArrayList<Canton>> get_Cantones();
+    @GET(ContenedorUrlApi.URL_Distric)
+    Call<ArrayList<Distric>> get_Distric();
+    @POST(ContenedorUrlApi.URL_Insert_Apartament)
+    Call<Boolean> add_apartament(@Body Apartamentos apartamentos);
 
-    @POST(ContenedorUrlApi.URL_ADDUSER)
-    Call<Boolean> addUser(@Body User user);
+
 }
