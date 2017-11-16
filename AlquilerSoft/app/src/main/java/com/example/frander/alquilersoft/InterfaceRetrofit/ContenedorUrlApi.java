@@ -10,5 +10,6 @@ public class ContenedorUrlApi {
     public static final String URL_Province = "getprovince";
     public static final String URL_Canton = "getcanton";
     public static final String URL_Distric = "getdistric";
+    public static final String URL_Insert_Apartament = "crearapartamento";
     //public static final String URL_USER = "tb_user";
 }

@@ -2,15 +2,32 @@ package com.example.frander.alquilersoft.Apartamentos;
 
 
 import android.app.Activity;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.provider.MediaStore;
+import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
+import android.util.Base64;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.Toast;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -22,11 +39,18 @@ import com.example.frander.alquilersoft.Canton.Canton;
 import com.example.frander.alquilersoft.Distric.Distric;
 import com.example.frander.alquilersoft.InterfaceRetrofit.ConexionApiEasyRent;
 import com.example.frander.alquilersoft.InterfaceRetrofit.ContenedorUrlApi;
+import com.example.frander.alquilersoft.Login;
 import com.example.frander.alquilersoft.Province.Province;
 import com.example.frander.alquilersoft.R;
 import com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner;
 
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.jar.Manifest;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -41,8 +65,27 @@ public class ApartamentosFragment extends Fragment {
     Spinner provinciasList;
     Spinner cantonesList;
     Spinner districList;
+
+    String provinciaAparta = "";
+    String cantonAparta ="";
+    int distrito_id;
+    String distritoAparta="";
     Activity activity;
 
+    EditText nombre;
+    EditText descripcion;
+    EditText cantidadOPersonas;
+    EditText direccion;
+    ImageView imagen;
+    EditText precio;
+    CheckBox disponible;
+
+    Button cargarImagen;
+    Button cancelar;
+    Button guardarPublicar;
+    Button guardar;
+
+    String imgDecodableString="";
     public ApartamentosFragment() {
         // Required empty public constructor
     }
@@ -139,11 +182,48 @@ public class ApartamentosFragment extends Fragment {
         provinciasList = (Spinner) view.findViewById(R.id.spProvincia);
         cantonesList = (Spinner) view.findViewById(R.id.spCanton);
         districList = (Spinner) view.findViewById(R.id.spDistrito);
+        imagen = (ImageView) view.findViewById(R.id.imgApartamento);
+        cargarImagen = (Button) view.findViewById(R.id.btnCargarImagen);
+        obtenerPermisosLectura();
+        nombre= (EditText) view.findViewById(R.id.edtNombre);
+        descripcion =(EditText) view.findViewById(R.id.edtDescripcion);
+        cantidadOPersonas = (EditText) view.findViewById(R.id.edtCantidadPersonas);
+        direccion = (EditText) view.findViewById(R.id.edtDireccion);
+        cargarImagen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                cargarImagen();
+            }
+        });
+        guardar = (Button) view.findViewById(R.id.button);
+        precio = (EditText) view.findViewById(R.id.edtPrecio);
+        disponible = (CheckBox)view.findViewById(R.id.cbDisponible);
+
+        guardar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String ApartaNombre = nombre.getText().toString();
+                String ApartDescripcion=descripcion.getText().toString();
+                int ApartaCantidadPersonas = Integer.parseInt(cantidadOPersonas.getText().toString());
+                String ApartaDireccion = direccion.getText().toString();
+                float ApartaPrecio = Float.parseFloat(precio.getText().toString());
+                int status;
+                if(disponible.isChecked()){
+                    status = 1;
+                }else{
+                    status = 2;
+                }
+               Apartamentos apartamento = new Apartamentos(ApartaCantidadPersonas,1,status,distrito_id,0,ApartaPrecio,ApartaNombre,ApartDescripcion,ApartaDireccion,imgDecodableString);
+                add_apartament(apartamento);
+                Log.i("objetocreado", "onClick: "+ apartamento.toString());
+            }
+        });
+
         provinciasList.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                String opcion = (String) parent.getItemAtPosition(position);
-                llenarSpinnerCantones(provincias,opcion,Cantones,cantonesList);
+                provinciaAparta = (String) parent.getItemAtPosition(position);
+                llenarSpinnerCantones(provincias,provinciaAparta,Cantones,cantonesList);
             }
 
             @Override
@@ -154,8 +234,20 @@ public class ApartamentosFragment extends Fragment {
         cantonesList.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                String opcion = (String) parent.getItemAtPosition(position);
-                llenarSpinnerDistrict(Cantones,opcion,Distritos,districList);
+                cantonAparta = (String) parent.getItemAtPosition(position);
+                llenarSpinnerDistrict(Cantones,cantonAparta,Distritos,districList);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+        districList.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                distritoAparta= (String)parent.getItemAtPosition(position);
+                distrito_id = obtenerIdDistrito(distritoAparta,Distritos);
             }
 
             @Override
@@ -169,20 +261,151 @@ public class ApartamentosFragment extends Fragment {
         get_Provinces();
 
         activity = getActivity();
-
-       /* ArrayAdapter adapter = new ArrayAdapter<String>(activity,android.R.layout.simple_spinner_dropdown_item,Lugares);
-        Spinner lugares = (Spinner) view.findViewById(R.id.spnLugares);
-        lugares.setAdapter(adapter);*/
-       /* ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(activity,android.R.layout.simple_dropdown_item_1line, Lugares);
-        MaterialBetterSpinner materialDesignSpinner = (MaterialBetterSpinner) view.findViewById(R.id.amSpnLugares);
-        materialDesignSpinner.setAdapter(arrayAdapter);
-
-        ArrayAdapter<String> arrayAdapter2 = new ArrayAdapter<String>(activity,android.R.layout.simple_dropdown_item_1line, Estado);
-        MaterialBetterSpinner materialDesignSpinner2 = (MaterialBetterSpinner) view.findViewById(R.id.amSpnEstado);
-        materialDesignSpinner2.setAdapter(arrayAdapter2);*/
         return view;
     }
 
+    private void add_apartament(Apartamentos apartamento) {
+        ConexionApiEasyRent conexion = retrofit.create(ConexionApiEasyRent.class);
+        Call<Boolean> isCreated = conexion.add_apartament(apartamento);
+        isCreated.enqueue(new Callback<Boolean>() {
+            @Override
+            public void onResponse(Call<Boolean> call, Response<Boolean> response) {
+                if(response.isSuccessful()){
+                    Toast.makeText(getActivity(),"Se incerto correctamente",Toast.LENGTH_LONG).show();
+                }else{
+                    Toast.makeText(getActivity(),"No se incerto correctamente",Toast.LENGTH_LONG).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Boolean> call, Throwable t) {
+                Toast.makeText(getActivity(),"Problema de conexion: "+t,Toast.LENGTH_LONG).show();
+            }
+        });
+
+    }
+
+    private int obtenerIdDistrito(String distritoAparta, ArrayList<Distric> distritos) {
+        int id=0;
+        for(int i = 0; i<distritos.size();i++){
+            if(distritoAparta.equalsIgnoreCase(distritos.get(i).getName())){
+                id = distritos.get(i).getId();
+                i=distritos.size();
+            }
+        }
+        return id;
+    }
+
+
+    private boolean obtenerPermisosLectura() {
+        if(Build.VERSION.SDK_INT >= 23 ){
+            if(ActivityCompat.checkSelfPermission(getActivity(),android.Manifest.permission.READ_EXTERNAL_STORAGE)== PackageManager.PERMISSION_GRANTED){
+                Toast.makeText(getContext(),"Hay permiso",Toast.LENGTH_LONG).show();
+                return true;
+            }else{
+                ActivityCompat.requestPermissions(getActivity(),new String[]{android.Manifest.permission.READ_EXTERNAL_STORAGE},1);
+                Toast.makeText(getContext(),"Se dieron los permisos",Toast.LENGTH_LONG).show();
+                return false;
+            }
+
+        }else{
+            Toast.makeText(getContext(),"tienes permiso 2",Toast.LENGTH_LONG).show();
+            return true;
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if(grantResults[0]==PackageManager.PERMISSION_GRANTED){
+            Toast.makeText(getContext(),"Permission"+permissions[0]+" was "+grantResults[0],Toast.LENGTH_LONG).show();
+        }
+    }
+
+    private void cargarImagen() {
+        Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+        intent.setType("image/");
+        startActivityForResult(intent.createChooser(intent,"Seleccione la aplicación"),10);
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+            try {
+                if (resultCode == Activity.RESULT_OK) {
+                    final Uri imageUri = data.getData();
+                    final InputStream imageStream = getContext().getContentResolver().openInputStream(imageUri);
+                    final Bitmap selectedImage = BitmapFactory.decodeStream(imageStream);
+                    imgDecodableString = encodeImage(selectedImage);
+
+                    Uri selectedImages = data.getData();
+                    String[] filePathColumn = { MediaStore.Images.Media.DATA };
+
+                    // Get the cursor
+                    Cursor cursor = getContext().getContentResolver().query(selectedImages,filePathColumn, null, null, null);
+                    // Move to first row
+                    cursor.moveToFirst();
+                    int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
+                    imgDecodableString = cursor.getString(columnIndex);
+                    Log.i("sayayin",imgDecodableString);
+                    imgDecodableString = encodeImages(imgDecodableString);
+
+                    cursor.close();
+
+
+
+
+                    Bitmap myBitmapAgain = decodeBase64(imgDecodableString);
+                    imagen.setImageBitmap(myBitmapAgain);
+
+
+                } else {
+                    Toast.makeText(getContext(),"No haz escogido una imagen",Toast.LENGTH_LONG).show();
+                }
+            } catch (Exception e) {
+                Log.i("Error",e+"");
+                Toast.makeText(getContext(), "Algo salio mal", Toast.LENGTH_LONG)
+                        .show();
+            }
+       // }
+    }
+
+    public static Bitmap decodeBase64(String input)
+    {
+        byte[] decodedBytes = Base64.decode(input.getBytes(), Base64.DEFAULT);
+        return BitmapFactory.decodeByteArray(decodedBytes, 0, decodedBytes.length);
+    }
+    private String encodeImage(Bitmap bm) {
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        bm.compress(Bitmap.CompressFormat.JPEG,100,baos);
+        byte[] b = baos.toByteArray();
+        imgDecodableString = Base64.encodeToString(b, Base64.DEFAULT);
+
+        return imgDecodableString;
+    }
+
+    private String encodeImages(String path) {
+        File imagefile = new File(path);
+        FileInputStream fis = null;
+        try{
+            fis = new FileInputStream(imagefile);
+
+        }catch(FileNotFoundException e){
+            e.printStackTrace();
+            Log.i("leermensaje", "encodeImages: "+e);
+        }
+
+        Bitmap bm = BitmapFactory.decodeStream(fis);
+        Log.i("imagen1gg", "encodeImages: "+bm);
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        bm.compress(Bitmap.CompressFormat.JPEG,100,baos);
+        byte[] b = baos.toByteArray();
+        imgDecodableString = Base64.encodeToString(b, Base64.DEFAULT);
+        Log.i("Base64prueba", "encodeImages: "+imgDecodableString);
+        //Base64.de
+        return imgDecodableString;
+
+    }
     private void llenarSpinnerDistrict(ArrayList<Canton> cantones, String opcion, ArrayList<Distric> distritos, Spinner districList) {
         Canton canton =new Canton();
         ArrayList<Distric> distritosSeleccionados = new ArrayList<>();

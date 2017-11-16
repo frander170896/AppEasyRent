@@ -32,7 +32,7 @@ public class AdaptadorMostrarDepas extends RecyclerView.Adapter<AdaptadorMostrar
 
     @Override
     public void onBindViewHolder(ApartamentosViewHolder holder, int position) {
-        holder.txtNumero.setText(apartamentos.get(position).getNumeroApartamento()+"");
+       /* holder.txtNumero.setText(apartamentos.get(position).getNombre+"");
         holder.txtPrecio.setText("₡"+apartamentos.get(position).getPrecio()+"");
         if(apartamentos.get(position).getCapacidad() == 1){
             holder.txtCapacidad.setText(apartamentos.get(position).getCapacidad()+" persona");
@@ -45,7 +45,7 @@ public class AdaptadorMostrarDepas extends RecyclerView.Adapter<AdaptadorMostrar
         }else{
             holder.txtDisponible.setText("Ocupado");
         }
-        holder.Img.setImageResource(apartamentos.get(position).getImagen());
+        holder.Img.setImageResource(apartamentos.get(position).getImagen());*/
     }
 
     @Override

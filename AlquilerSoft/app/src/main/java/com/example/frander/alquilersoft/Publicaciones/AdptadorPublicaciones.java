@@ -35,7 +35,7 @@ public class AdptadorPublicaciones extends RecyclerView.Adapter<AdptadorPublicac
 
     @Override
     public void onBindViewHolder(PublicacionesHolder holder, int position) {
-        holder.img.setImageResource(apartamentos.get(position).getImagen());
+       /* holder.img.setImageResource(apartamentos.get(position).getImagen());
         holder.precio.setText("₡"+apartamentos.get(position).getPrecio());
         if(apartamentos.get(position).getCapacidad() == 1){
             holder.capacidad.setText(apartamentos.get(position).getCapacidad()+" persona");
@@ -44,7 +44,7 @@ public class AdptadorPublicaciones extends RecyclerView.Adapter<AdptadorPublicac
         }
         holder.capacidad.setText(""+apartamentos.get(position).getCapacidad());
         holder.contacto.setText(apartamentos.get(position).getContacto());
-        holder.ubicacion.setText(apartamentos.get(position).getUbicacion());
+        holder.ubicacion.setText(apartamentos.get(position).getUbicacion());*/
     }
 
     @Override

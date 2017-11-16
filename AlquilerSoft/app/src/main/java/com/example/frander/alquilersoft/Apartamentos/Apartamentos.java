@@ -6,41 +6,44 @@ package com.example.frander.alquilersoft.Apartamentos;
 
 public class Apartamentos {
 
-    private int id;
-    private int idPropietario;
-    private int idInquilino;
-    private int numeroApartamento;
-    private int precio;
-    private String contacto;
-    private String ubicacion;
-    private int Capacidad;
-    private int disponible;
-    private int imagen;
+    int id;
+    int capacity;
+    int lessee_id;
+    int status_id;
+    int district_id;
+    int is_active;
+    float price;
 
-    public Apartamentos(int id, int numeroApartamento, int precio, String ubicacion, int capacidad, int disponible,int imagen) {
+    String name;
+    String description;
+    String adress;
+    String Image;
+
+    public Apartamentos(int id, int capacity, int lessee_id, int status_id, int district_id, int is_active, float price, String name, String description, String adress,String Image) {
         this.id = id;
-        this.numeroApartamento = numeroApartamento;
-        this.precio = precio;
-        this.ubicacion = ubicacion;
-        Capacidad = capacidad;
-        this.disponible = disponible;
-        this.imagen = imagen;
+        this.capacity = capacity;
+        this.lessee_id = lessee_id;
+        this.status_id = status_id;
+        this.district_id = district_id;
+        this.is_active = is_active;
+        this.price = price;
+        this.name = name;
+        this.description = description;
+        this.adress = adress;
+        this.Image = Image;
     }
 
-    public Apartamentos(int precio, String contacto, String ubicacion, int capacidad, int imagen) {
-        this.precio = precio;
-        this.contacto = contacto;
-        this.ubicacion = ubicacion;
-        Capacidad = capacidad;
-        this.imagen = imagen;
-    }
-
-    public String getContacto() {
-        return contacto;
-    }
-
-    public void setContacto(String contacto) {
-        this.contacto = contacto;
+    public Apartamentos(int capacity, int lessee_id, int status_id, int district_id, int is_active, float price, String name, String description, String adress,String Image) {
+        this.capacity = capacity;
+        this.lessee_id = lessee_id;
+        this.status_id = status_id;
+        this.district_id = district_id;
+        this.is_active = is_active;
+        this.price = price;
+        this.name = name;
+        this.description = description;
+        this.adress = adress;
+        this.Image = Image;
     }
 
     public int getId() {
@@ -51,67 +54,82 @@ public class Apartamentos {
         this.id = id;
     }
 
-    public int getIdPropietario() {
-        return idPropietario;
+    public int getCapacity() {
+        return capacity;
     }
 
-    public void setIdPropietario(int idPropietario) {
-        this.idPropietario = idPropietario;
+    public void setCapacity(int capacity) {
+        this.capacity = capacity;
     }
 
-    public int getIdInquilino() {
-        return idInquilino;
+    public int getLessee_id() {
+        return lessee_id;
     }
 
-    public void setIdInquilino(int idInquilino) {
-        this.idInquilino = idInquilino;
+    public void setLessee_id(int lessee_id) {
+        this.lessee_id = lessee_id;
     }
 
-    public int getNumeroApartamento() {
-        return numeroApartamento;
+    public int getStatus_id() {
+        return status_id;
     }
 
-    public void setNumeroApartamento(int numeroApartamento) {
-        this.numeroApartamento = numeroApartamento;
+    public void setStatus_id(int status_id) {
+        this.status_id = status_id;
     }
 
-    public int getPrecio() {
-        return precio;
+    public int getDistrict_id() {
+        return district_id;
     }
 
-    public void setPrecio(int precio) {
-        this.precio = precio;
+    public void setDistrict_id(int district_id) {
+        this.district_id = district_id;
     }
 
-    public String getUbicacion() {
-        return ubicacion;
+    public int getIs_active() {
+        return is_active;
     }
 
-    public void setUbicacion(String ubicacion) {
-        this.ubicacion = ubicacion;
+    public void setIs_active(int is_active) {
+        this.is_active = is_active;
     }
 
-    public int getCapacidad() {
-        return Capacidad;
+    public float getPrice() {
+        return price;
     }
 
-    public void setCapacidad(int capacidad) {
-        Capacidad = capacidad;
+    public void setPrice(float price) {
+        this.price = price;
     }
 
-    public int getDisponible() {
-        return disponible;
+    public String getName() {
+        return name;
     }
 
-    public void setDisponible(int disponible) {
-        this.disponible = disponible;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public int getImagen() {
-        return imagen;
+    public String getDescription() {
+        return description;
     }
 
-    public void setImagen(int imagen) {
-        this.imagen = imagen;
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getAdress() {
+        return adress;
+    }
+
+    public void setAdress(String adress) {
+        this.adress = adress;
+    }
+
+    @Override
+    public String toString() {
+        return  "capacity:" + capacity + ", lessee_id:" + lessee_id + ", status_id:" + status_id + ", district_id:" + district_id +
+                ", is_active:" + is_active + ", price:" + price + ", name:" + name + ", description:" + description+ ", adress:" + adress+
+                ", Image:" + Image;
     }
 }
